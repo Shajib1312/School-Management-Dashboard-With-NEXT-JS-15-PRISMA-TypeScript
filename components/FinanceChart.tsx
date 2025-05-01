@@ -78,32 +78,34 @@ const FinanceChart = () => {
     <div className="h-full text-iconAccent/65 bg-white rounded-lg p-4">
       <div className="flex justify-between items-center">
         <h1 className="text-cardHeading font-bold text-lg">Finance</h1>
-        <Image src="/moreDark.png" alt="" height={20} width={20} />
+        <Image
+          className="cursor-pointer transition-transform duration-300 ease-in-out hover:rotate-12"
+          src="/moreDark.png"
+          alt=""
+          height={20}
+          width={20}
+        />
       </div>
       <div className="w-full h-[90%]">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart width={500} height={300} data={data}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#154" />
-            <XAxis
-              axisLine={false}
-              dataKey="name"
-              tick={{ fill: "#15616D" }}
-              tickLine={false}
-            />
-            <YAxis
-              axisLine={false}
-              tick={{ fill: "#FF7D00" }}
-              tickLine={false}
-            />
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis axisLine={false} dataKey="name" tickMargin={10} />
+            <YAxis axisLine={false} tickMargin={20} />
             <Tooltip />
-            <Legend />
+            <Legend
+              align="center"
+              verticalAlign="top"
+              wrapperStyle={{ paddingTop: "10px", paddingBottom: "30px" }}
+            />
             <Line
               type="monotone"
               dataKey="expense"
-              stroke="#FF7D00"
+              stroke="#001524"
               activeDot={{ r: 8 }}
+              strokeWidth={5}
             />
-            <Line type="monotone" dataKey="income" stroke="#001524" />
+            <Line type="monotone" dataKey="income" stroke="#FF7D00" />
           </LineChart>
         </ResponsiveContainer>
       </div>
