@@ -16,7 +16,7 @@ export default function DashboardLayoutLayout({
           href="/"
         >
           <Image src={logo} alt="logo" width={32} height={32} />
-          <span className="hidden lg:block font-bold">UHCS</span>
+          <span className="hidden lg:block text-cardBackground font-bold">UHCS</span>
         </Link>
         <Menu />
       </div>

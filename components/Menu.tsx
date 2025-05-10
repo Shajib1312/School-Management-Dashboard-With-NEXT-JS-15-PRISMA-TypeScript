@@ -131,7 +131,7 @@ function Menu() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="flex items-center justify-center lg:justify-start gap-4 py-2 rounded-md hover:bg-cardBackground/10 hover:text-iconSecondary transition-transform duration-300 ease-in-out hover:translate-2 cursor-pointer md:px-2"
+                  className="flex items-center justify-center text-cardBackground lg:justify-start gap-4 py-2 rounded-md hover:bg-cardBackground/10 hover:text-iconSecondary transition-transform duration-300 ease-in-out hover:translate-2 cursor-pointer md:px-2"
                 >
                   <Image
                     src={item.icon}
