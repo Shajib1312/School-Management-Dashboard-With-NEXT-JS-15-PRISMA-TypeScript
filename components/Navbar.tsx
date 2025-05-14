@@ -7,17 +7,11 @@ function Navbar() {
       <div className="hidden md:block text-xs rounded-full">
         <label
           htmlFor="search"
-          className="flex items-center gap-2 p-2 ring-1 ring-iconPrimary rounded-full cursor-pointer"
+          className="flex items-center gap-2 p-2 ring-1 ring-iconSecondary rounded-full cursor-pointer"
         >
-          <Image
-            
-            src="/search.png"
-            alt="search icon"
-            width={14}
-            height={14}
-          />
+          <Image src="/search.svg" alt="search icon" width={16} height={16} />
           <input
-            className="w-[200px] px-2 bg-transparent text-iconPrimary placeholder:text-iconAccent focus:outline-none"
+            className="w-[200px] px-2 bg-transparent text-iconSecondary placeholder:text-iconAccent focus:outline-none"
             type="text"
             name="search"
             id="search"
