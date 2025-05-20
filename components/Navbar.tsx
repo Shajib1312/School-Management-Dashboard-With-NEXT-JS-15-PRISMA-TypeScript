@@ -21,10 +21,10 @@ function Navbar() {
       </div>
       {/* Icon and User */}
       <div className="flex items-center gap-6 justify-end w-full">
-        <div className="bg-iconPrimary/25 rounded-full w-7 h-7 flex items-center justify-center cursor-pointer">
+        <div className="hover:bg-gray-100 rounded-full w-7 h-7 flex items-center justify-center cursor-pointer">
           <Image src="/message.png" alt="notification" width={20} height={20} />
         </div>
-        <div className="bg-iconPrimary/25 rounded-full w-7 h-7 flex items-center justify-center cursor-pointer relative">
+        <div className="hover:bg-gray-100  rounded-full w-7 h-7 flex items-center justify-center cursor-pointer relative">
           <Image
             src="/announcement.png"
             alt="announcement"
@@ -43,7 +43,7 @@ function Navbar() {
           <span className="text-[10px] text-iconPrimary text-right">Admin</span>
         </div>
         <Image
-          src="/avatar.png"
+          src="/avater.png"
           alt="user"
           width={36}
           height={36}
