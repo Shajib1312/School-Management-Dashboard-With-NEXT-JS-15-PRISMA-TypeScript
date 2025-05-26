@@ -1,74 +1,64 @@
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
-import { parentsData, role } from "@/lib/data";
+import { assignmentsData, role } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 
-type Parent = {
+type Assignment = {
   id: string;
-  students: string[];
-  name: string;
-  email?: string;
-  phone: string;
-  address: string;
+  dueDate: string;
+  subject: string;
+  class: string;
+  teacher: number;
 };
 
 const columns = [
   {
-    header: "Info",
-    accessor: "info",
+    header: "Subject Name",
+    accessor: "name",
   },
   {
-    header: "Student Names",
-    accessor: "students",
+    header: "Class",
+    accessor: "class",
+  },
+  {
+    header: "Teacher",
+    accessor: "teacher",
+    className: "hidden md:table-cell",
+  },
+  {
+    header: "Due Date",
+    accessor: "dueDate",
     className: "hidden md:table-cell",
   },
 
-
-  {
-    header: "Phone",
-    accessor: "phone",
-    className: "hidden lg:table-cell",
-  },
-  {
-    header: "Address",
-    accessor: "address",
-    className: "hidden lg:table-cell",
-  },
   {
     header: "Actions",
     accessor: "action",
   },
 ];
 
-export default function ParentList() {
-  const renderRow = (item: Parent) => (
+export default function AssignmentList() {
+  const renderRow = (item: Assignment) => (
     <tr
       key={item.id}
       className="text-sm text-iconAccent border-b border- odd:bg-emerald-200/20 hover:bg-paragraph transition-all duration-200 ease-in-out"
     >
-      <td className="flex items-center gap-2 p-2">
-        
-        <div className="flex flex-col">
-          <h3 className="font-semibold">{item.name}</h3>
-          <p className="text-xs text-iconAccent">{item?.email}</p>
-        </div>
-      </td>
-      <td className="hidden md:table-cell text-sm">{item.students.join(",")}</td>
-
-      <td className="hidden md:table-cell text-sm ">{item.phone}</td>
-      <td className="hidden md:table-cell text-sm ">{item.address}</td>
+      <td className="flex items-center gap-4 p-4">{item.subject}</td>
+      <td className="hidden md:table-cell">{item.class}</td>
+      <td className="hidden md:table-cell">{item.teacher}</td>
+      <td className="hidden md:table-cell">{item.dueDate}</td>
       <td>
         <div className="flex gap-2 items-center">
-          <Link href={`/list/parents/${item.id}`}>
-            <button className="w-7 h-7 flex items-center justify-center cursor-pointer  rounded-full hover:bg-paragraph/80 transition-all duration-200 ease-in-out">
-              <Image src="/plus.svg" alt="plus" width={16} height={16} />
+          <Link href={`/list/assignment/${item.id}`}>
+            <button className="w-7 h-7 flex items-center justify-center cursor-pointer  rounded-full hover:bg-emerald-400/40 transition-all duration-200 ease-in-out">
+              <Image src="/plus.svg" alt="view" width={16} height={16} />
             </button>
           </Link>
           {role === "admin" && (
-            <button className="w-7 h-7 flex items-center justify-center cursor-pointer rounded-full hover:bg-priButton/60 transition-all duration-200 ease-in-out">
-              <Image src="/delete.svg" alt="plus" width={16} height={16} />
+            <button className="w-7 h-7 flex items-center justify-center cursor-pointer rounded-full hover:bg-priButton/40 transition-all duration-200 ease-in-out">
+              <Image src="/delete.svg" alt="view" width={16} height={16} />
             </button>
           )}
         </div>
@@ -81,7 +71,7 @@ export default function ParentList() {
       {/* top */}
       <div className="flex justify-between items-center mb-3">
         <h2 className="hidden md:block font-semibold text-lg text-icon">
-          All Parents
+          All Assignments
         </h2>
         <div className=" flex flex-col md:flex-row gap-3 items-center w-full md:w-auto">
           <TableSearch />
@@ -99,7 +89,7 @@ export default function ParentList() {
         </div>
       </div>
       {/* lists  */}
-      <Table columns={columns} renderRow={renderRow} data={parentsData} />
+      <Table columns={columns} renderRow={renderRow} data={assignmentsData} />
       {/* pagination */}
 
       <Pagination />
