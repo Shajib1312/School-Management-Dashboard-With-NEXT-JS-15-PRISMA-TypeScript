@@ -10,11 +10,11 @@ function Table({
   return (
     <table className="w-full mt-4">
       <thead>
-        <tr className="text-xs text-left text-iconAccent">
+        <tr className="text-sm text-left text-iconAccent">
           {columns.map((column) => (
             <th
               key={column.accessor}
-              className={`p-2 ${column.className}`}
+              className={column.className}
             >
               {column.header}
             </th>

@@ -67,13 +67,13 @@ export default function AssignmentList() {
   );
 
   return (
-    <div className="flex-1 bg-white p-3 rounded-md m-3  mt-0">
+    <div className="flex-1 bg-white p-4 rounded-md m-4  mt-0">
       {/* top */}
-      <div className="flex justify-between items-center mb-3">
+      <div className="flex justify-between items-center mb-4">
         <h2 className="hidden md:block font-semibold text-lg text-icon">
           All Assignments
         </h2>
-        <div className=" flex flex-col md:flex-row gap-3 items-center w-full md:w-auto">
+        <div className=" flex flex-col md:flex-row gap-4 items-center w-full md:w-auto">
           <TableSearch />
           <div className="flex gap-3 self-end items-center">
             <button className="w-8  rounded-full hover:bg-paragraph transition-all duration-300 ease-in-out h-8 flex items-center justify-center cursor-pointer">

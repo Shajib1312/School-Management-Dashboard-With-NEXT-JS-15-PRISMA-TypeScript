@@ -48,7 +48,7 @@ export default function ParentList() {
       key={item.id}
       className="text-sm text-iconAccent border-b border- odd:bg-emerald-200/20 hover:bg-paragraph transition-all duration-200 ease-in-out"
     >
-      <td className="flex items-center gap-2 p-2">
+      <td className="flex items-center gap-4 p-4">
         
         <div className="flex flex-col">
           <h3 className="font-semibold">{item.name}</h3>
